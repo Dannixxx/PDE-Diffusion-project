@@ -32,11 +32,16 @@ r = a*k/(h^2);
 
 ctl = 1;
 if r>0.5
-    disp("Explicit Euler Method --> Unstable Method")
+    print=sprintf("Explicit Euler Method --> Unstable Method, r = %d",r);
+    disp(print)
     ctl = 0;
-    w = [];
+    %s = [];
+else
+    print=sprintf("Explicit Euler Method --> Stable Method, r = %d",r);
+    disp(print)
 end
-disp("Explicit Euler Method --> Stable Method")
+
+
 rr = 1-2*r;
 %discretization in space and time
 x = h:h:Ns*h;   % start from the index 0+h 
@@ -64,5 +69,6 @@ end
 % add the boundary conditions
 s= [g1_k;u;g2_k];
 end
+
 
 
