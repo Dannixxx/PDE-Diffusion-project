@@ -7,7 +7,7 @@ function plot_additional_graphs(cond_numEE,cond_numIE,cond_numCN, activeSpatialS
     tcond = linspace(0, 1,1000);
 
     if plotCondTime
-        %plot_condition_number_vs_time(tcond,cond_numEE,cond_numIE,cond_numCN,activeTimeSteps);
+        
         condTime=plot_condition_number_vs_time(cond_numEE, cond_numIE, cond_numCN, activeSpatialSteps, activeTimeSteps);
           if plot_savefig
               file_namecondTime= fullfile(figuresFolder, sprintf("Condition Number vs Time Step.png"));
@@ -15,13 +15,14 @@ function plot_additional_graphs(cond_numEE,cond_numIE,cond_numCN, activeSpatialS
          end
     end
     if plotCondSpace
-        % % % figureCondSpace = figure('Name', 'Condition Number vs Spatial Step');
-        % % % plot_condition_number_vs_space(activeSpatialSteps, activeTimeSteps);
+        
         condSpace = plot_condition_number_vs_space(cond_numEE, cond_numIE, cond_numCN, activeSpatialSteps, activeTimeSteps);
         if plot_savefig
                 file_namecondSpace= fullfile(figuresFolder, sprintf("Condition Number vs Space Step.png"));
              saveas(condSpace,file_namecondSpace,'png')
+        end
     end
+
     if plotTruncErrorTime
         figureTruncErrorTime = figure('Name', 'Global Truncation Error vs Time Step');
         plot_truncation_error_vs_time(activeSpatialSteps, activeTimeSteps);
@@ -42,23 +43,9 @@ end
 
 
 
-
-% % % function plot_condition_number_vs_time(tcond,cond_numEE,cond_numIE,cond_numCN,activeTimeSteps)
-% % % figureCondTime = figure('Name', 'Condition Number vs Time Step'); 
-% % %     for i = 1:length(activeTimeSteps)
-% % %         subplot(length(activeTimeSteps),1,i,'Parent',figureCondTime);
-% % %         plot(tcond, cond_num_IE(:,i), 'r', tcond, cond_num_EE(:,i), 'g', tcond, cond_num_CN(:,i), 'b');
-% % %         legend('Implicit Euler', 'Explicit Euler', 'Crank-Nicolson')
-% % %         xlabel('Temporal steps h')
-% % %         ylabel('Condition number')
-% % %     end
-% % % end
-
-
 function condTime=plot_condition_number_vs_time(cond_numEE, cond_numIE, cond_numCN, activeSpatialSteps, activeTimeSteps)
     condTime=figure('Name', 'Condition Number vs Time Step'); 
-    % % % fig_name=sprintf("Plot for spatial step size = %.3f, temporal step size %.3f, variable r=%.3f",dx,dt,r);
-    % % % sgtitle(fig_name);
+    
     % Loop over each time step
     for i = 1:length(activeTimeSteps)
         subplot(length(activeTimeSteps), 1, i);
@@ -90,9 +77,4 @@ function condSpace=plot_condition_number_vs_space(cond_numEE, cond_numIE, cond_n
         ylabel('Condition Number');
         grid on;
     end
- % %     if plot_savefig
- % %     file_name = sprintf('Condition Number vs Spatial Step.png');
- % %     saveas(condSpace,file_name,'png');
- % % end
-end
 end
