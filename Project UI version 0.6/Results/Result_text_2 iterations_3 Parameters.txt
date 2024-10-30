@@ -1,0 +1,47 @@
+
+ ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0100 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0004 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 0.6360 [s], conditioning number: 11327.9052 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 12.9120 [s], conditioning number: 48.5985 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 8.4367 [s] , conditioning number: 24676.4467 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.3162 [s] 
+
+ --------    ✦ Calcutation with dx=0.010, dt=0.010  completed 
+
+ ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0010 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0004 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 5.1456 [s], conditioning number: 7852.5321 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 130.8911 [s], conditioning number: 5.7600 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 83.4501 [s] , conditioning number: 52035.2923 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.8751 [s] 
+
+ --------    ✦ Calcutation with dx=0.010, dt=0.001  completed 
+
+Stability Condition - r - Table (Explicit Euler Method):
+
+Spatial Step \ Time Step |  0.0100 | 0.0010 |
+
+      0.0100                       | 11.9000 | 1.1900 |
+
+                 ⚡ Total Time of Simulations: 244.02 seconds 
+

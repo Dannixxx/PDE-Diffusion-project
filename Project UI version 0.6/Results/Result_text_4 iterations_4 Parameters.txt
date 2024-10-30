@@ -1,0 +1,86 @@
+
+ ------------------------------Current parameter:  dx = 0.0500 [cm]      dt = 0.0100 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0105 [s] 
+
+         ➤ ✅ Solution is stable.
+
+ ◉ Elapsed Time Explicit Euler : 0.0508 [s], conditioning number: 296.0591 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 0.6953 [s], conditioning number: 2.9039 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 0.7413 [s] , conditioning number: 41.5022 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.4042 [s] 
+
+ --------    ✦ Calcutation with dx=0.050, dt=0.010  completed 
+
+ ------------------------------Current parameter:  dx = 0.0500 [cm]      dt = 0.0050 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0105 [s] 
+
+         ➤ ✅ Solution is stable.
+
+ ◉ Elapsed Time Explicit Euler : 0.0218 [s], conditioning number: 20.8267 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 1.2571 [s], conditioning number: 1.9520 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 1.3323 [s] , conditioning number: 2.5768 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.0976 [s] 
+
+ --------    ✦ Calcutation with dx=0.050, dt=0.005  completed 
+
+ ------------------------------Current parameter:  dx = 0.0200 [cm]      dt = 0.0100 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0017 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 0.1964 [s], conditioning number: 2690.2092 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 2.7205 [s], conditioning number: 12.8996 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 2.2584 [s] , conditioning number: 16443.5514 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.1534 [s] 
+
+ --------    ✦ Calcutation with dx=0.020, dt=0.010  completed 
+
+ ------------------------------Current parameter:  dx = 0.0200 [cm]      dt = 0.0050 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0017 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 0.2156 [s], conditioning number: 1569.0440 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 5.2470 [s], conditioning number: 6.9499 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 4.4174 [s] , conditioning number: 5407.3706 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.1720 [s] 
+
+ --------    ✦ Calcutation with dx=0.020, dt=0.005  completed 
+
+Stability Condition - r - Table (Explicit Euler Method):
+
+Spatial Step \ Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.4760 | 0.2380 |
+      0.0200                       | 2.9750 | 1.4875 |
+
+                 ⚡ Total Time of Simulations: 21.90 seconds 
+

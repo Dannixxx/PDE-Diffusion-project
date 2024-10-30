@@ -1,0 +1,68 @@
+
+ ------------------------------Current parameter:  dx = 0.0500 [cm]      dt = 0.0050 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0105 [s] 
+
+         ➤ ✅ Solution is stable.
+
+ ◉ Elapsed Time Explicit Euler : 0.0288 [s], conditioning number: 20.8267 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 1.3610 [s], conditioning number: 1.9520 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 1.2962 [s] , conditioning number: 2.5768 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.1025 [s] 
+
+ --------    ✦ Calcutation with dx=0.050, dt=0.005  completed 
+
+ ------------------------------Current parameter:  dx = 0.0200 [cm]      dt = 0.0050 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0017 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 0.2348 [s], conditioning number: 1569.0440 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 5.5420 [s], conditioning number: 6.9499 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 4.5470 [s] , conditioning number: 5407.3706 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.2568 [s] 
+
+ --------    ✦ Calcutation with dx=0.020, dt=0.005  completed 
+
+ ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0050 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0004 [s] 
+
+         ➤ ⛔ WARNING: Solution is unstable.
+
+ ◉ Elapsed Time Explicit Euler : 1.5199 [s], conditioning number: 26554.8328 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 24.6301 [s], conditioning number: 24.7996 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 16.4506 [s] , conditioning number: 14619.7616 
+
+ 
+ ◉ Elapsed Time PDEPE : 0.4956 [s] 
+
+ --------    ✦ Calcutation with dx=0.010, dt=0.005  completed 
+
+Stability Condition - r - Table (Explicit Euler Method):
+
+Spatial Step \ Time Step |  0.0050 |
+
+      0.0500                       | 0.2380 |
+      0.0200                       | 1.4875 |
+      0.0100                       | 5.9500 |
+
+                 ⚡ Total Time of Simulations: 795.66 seconds 
+
