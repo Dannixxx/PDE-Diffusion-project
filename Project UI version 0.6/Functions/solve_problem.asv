@@ -15,14 +15,8 @@ function [result_text,k,lengthSpace,lengthTime,r] = solve_problem(chk_spatialSte
     activeSpatialSteps = activeSpatialSteps(activeSpatialSteps > 0);  % Remove unchecked
     activeTimeSteps = [timeSteps(1), timeSteps(2),timeSteps(3)] .* chk_timeSteps;       % Only take checked values
     activeTimeSteps = activeTimeSteps(activeTimeSteps > 0);  % Remove unchecked
-    result_text=[];
-
-    cond_numEE = zeros (size(activeSpatialSteps,2),size(activeTimeSteps,2));
-    cond_numIE = zeros (size(activeSpatialSteps,2),size(activeTimeSteps,2));
-    cond_numCN = zeros (size(activeSpatialSteps,2),size(activeTimeSteps,2));
-
-    lengthSpace = length(activeSpatialSteps);
-    lengthTime = length(activeTimeSteps);
+    
+    [cond_numEE,cond_numIE,cond_numCN,LTE_EE,GTE_EE,RTE_EE,LTE_IE,GTE_IE,RTE_IE,LTE_CN,GTE_CN,RTE_CN,result_text,lengthSpace,lengthTime,r] = initialization_var(activeSpatialSteps,activeTimeSteps);
 
     % If no active step sizes are selected
     if isempty(activeSpatialSteps) || isempty(activeTimeSteps)
@@ -34,8 +28,7 @@ function [result_text,k,lengthSpace,lengthTime,r] = solve_problem(chk_spatialSte
   
     % Timing the computations
     Start=tic;
-    r = zeros (size(activeSpatialSteps,2),size(activeTimeSteps,2));
-    
+
     if plotPDEPE && k==0
         Plot_PDEfig = figure("Name","plot PDEPE", WindowState='maximized');
         set(0, 'CurrentFigure', Plot_PDEfig);
@@ -53,10 +46,11 @@ function [result_text,k,lengthSpace,lengthTime,r] = solve_problem(chk_spatialSte
             % Solve using the explicit, implicit Euler, and Crank-Nicolson methods
             [sol_explicit,cond_numEE(i,j),spectr_rad,r(i,j), sol_implicit,cond_numIE(i,j),sol_crank,cond_numCN(i,j), pde_sol,result_text_for] = solve_diffusion(dx, dt, diffCoeff, tubeLength, simTime, relTol, absTol,result_text);
             
-            % Append current progress to result_text
-            %result_text = sprintf('%s\nFinished solving for dx=%.3f, dt=%.3f', result_text, dx, dt);
+            
             result_text_for = [result_text_for, sprintf('\n --------    ✦ Calcutation with dx=%.3f, dt=%.3f  completed \n' , dx, dt)];
             result_text=[result_text, result_text_for];
+
+            [LTE_EE(i,j),GTE_EE(i,j),RTE_EE(i,j),LTE_IE(i,j),GTE_IE(i,j),RTE_IE(i,j),LTE_CN(i,j),GTE_CN(i,j),RTE_CN(i,j)]=errors(sol_explicit,sol_implicit,sol_crank,pde_sol);
 
             % if any(isnan(sol_explicit(:))) || any(isnan(sol_implicit(:))) || any(isnan(sol_crank(:)))
             %     uitext_results.Value = sprintf('Numerical solution encountered instability. Please try different step sizes. %.4f %.4f',dx, dt);
@@ -82,65 +76,45 @@ function [result_text,k,lengthSpace,lengthTime,r] = solve_problem(chk_spatialSte
             end
 
             if plotPDEPE
-                [Plot_PDEfig,k] =plot_PE (pde_sol,dx, dt, tubeLength, simTime,k,lengthSpace,lengthTime,plotPDEPE,Plot_PDEfig);
-                 if plot_savefig
-                        file_namePDE = fullfile(figuresFolder, sprintf("3D Sol_PDEPE_spatial step = %.3f, temporal step %.3f.png",dx,dt));
-                     saveas(Plot_PDEfig,file_namePDE);
-                     clear Plot_PDEfig
-                 end
+                [Plot_PDEfig,k] = plot_PE (pde_sol,dx, dt, tubeLength, simTime,k,lengthSpace,lengthTime,plotPDEPE,Plot_PDEfig);
             end
             k=k+1;
         end
     end
-    
+    if plot_savefig && plotPDEPE
+       file_namePDE = fullfile(figuresFolder, sprintf("3D Sol_PDEPE.png"));
+       saveas(Plot_PDEfig,file_namePDE);
+   % clear Plot_PDEfig
+    end
    
     % Compute and plot condition numbers, truncation errors, etc.ite 
     if plotCondTime || plotCondSpace || plotTruncErrorTime || plotTruncErrorSpace || plotRelErrorTime || plotRelErrorSpace || plot_savefig
-        plot_additional_graphs(cond_numEE,cond_numIE,cond_numCN, activeSpatialSteps, activeTimeSteps, plotCondTime, plotCondSpace, plotTruncErrorTime, plotTruncErrorSpace, plotRelErrorTime, plotRelErrorSpace,plot_savefig,figuresFolder);
+        plot_additional_graphs(cond_numEE,cond_numIE,cond_numCN,LTE_EE,GTE_EE,RTE_EE,LTE_IE,GTE_IE,RTE_IE,LTE_CN,GTE_CN,RTE_CN, activeSpatialSteps, activeTimeSteps, plotCondTime, plotCondSpace, plotTruncErrorTime, plotTruncErrorSpace, plotRelErrorTime, plotRelErrorSpace,plot_savefig,figuresFolder);
     end
      % Elapsed time for the computation
     Tsim = toc(Start);
 
-    % After the double loop for spatial and time steps:
-    table_header = sprintf('\nStability Condition - r - Table (Explicit Euler Method):\n');
-    time_step_header = 'Spatial Step \\ Time Step | ';  % Column header
-    
-    % Add each time step to the header
-    for j = 1:lengthTime
-        time_step_header = [time_step_header, sprintf(' %.4f |', activeTimeSteps(j))];
-    end
-    
-    % Separator line
-    % % separator_line = repmat('-', 1, length(time_step_header) + 5);
-     table_body = "";  % Initialize an empty table body string
-    
-    % Loop through each spatial step to add rows
-    for i = 1:lengthSpace
-        row_data = sprintf('      %.4f                       |', activeSpatialSteps(i));
-        
-        % Add each stability condition value for the current spatial step
-        for j = 1:lengthTime
-            row_data = [row_data, sprintf(' %.4f |', r(i, j))];
-        end
-        
-        % Append the formatted row to the table body
-        table_body = [table_body, row_data];
-    end
-    
-    % Combine header, separator, and body to form the complete table
-    stability_table = [table_header, time_step_header, table_body, '\n'];
-    stability_table=strjoin(stability_table, '\n');
-    stability_tab= sprintf(stability_table);
+    print_tab=print_table(lengthTime,activeTimeSteps,lengthSpace,activeSpatialSteps,r,LTE_EE,GTE_EE,RTE_EE,LTE_IE,GTE_IE,RTE_IE,LTE_CN,GTE_CN,RTE_CN);
 
     elapsedTime = sprintf('                 ⚡ Total Time of Simulations: %.2f seconds \n\n', Tsim);
     % Append the formatted table and the time of simulation to result_text
-    result_text = [result_text,stability_tab,elapsedTime];
-    
+    result_text = [result_text,print_tab,elapsedTime];
     
     % result_text = [result_text , elapsedTime];
     uitext_results.Value = "Simulation Complete";
     drawnow;
     result_text==strjoin(result_text, '\n');
+    
+    % This function provides the values ​​of space and time (between 0 and 1) in which the stability limit is obtained r = 0.5
+    Plot_stability = test_stability(diffCoeff);
+    if plot_savefig
+      file_name_stab = fullfile(figuresFolder, sprintf("Stability limit for time and space.png"));
+      saveas(,file_name2D);
+      clear file_name2D 
+      clear fig2D
+    end   
+   
+
 end 
 
 

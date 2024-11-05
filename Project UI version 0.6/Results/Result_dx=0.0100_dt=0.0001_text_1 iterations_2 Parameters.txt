@@ -1,0 +1,128 @@
+
+ ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0001 [s] ------------------------------ 
+ 
+ ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0004 [s] 
+
+         ➤ ✅ Solution is stable.
+
+ ◉ Elapsed Time Explicit Euler : 2.8290 [s], conditioning number: 1.9084 
+
+ 
+ ◉ Elapsed Time Implicit Euler : 1233.0163 [s], conditioning number: 1.4760 
+
+ 
+ ◉ Elapsed Time Crank - Nicolson : 756.7817 [s] , conditioning number: 1.5788 
+
+ 
+ ◉ Elapsed Time PDEPE : 96.4975 [s] 
+
+ --------    ✦ Calcutation with dx=0.010, dt=0.000  completed 
+
+
+ 🔶🔶🔶🔶 Stability Condition - r - Table (Explicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.1190 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Explicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 1.9084 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Implicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 1.4760 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Crank-Nicolson Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 1.5788 |
+
+
+
+🔶🔶🔶🔶 Local Truncation Error Table (Explicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.1660 |
+
+
+
+🔶🔶🔶🔶 Local Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.1384 |
+
+
+
+ 🔶🔶🔶🔶 Local Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0063 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Explicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0002 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0002 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶 
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0002 |
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Explicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0001 |
+
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0001 |
+
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶 
+
+Spatial Step / Time Step |  0.0001 |
+
+      0.0100                       | 0.0001 |
+
+
+                 ⚡ Total Time of Simulations: 3684.73 seconds 
+

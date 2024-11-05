@@ -398,7 +398,7 @@ function print_tab=print_table(lengthTime,activeTimeSteps,lengthSpace,activeSpat
     RTE_CN_table=strjoin(RTE_CN_table, '\n');
     RTE_CN_tab= sprintf(RTE_CN_table);
   
-    print_table=  strcat(stability_tab, '\n',condEE_tab, '\n',condIE_tab, '\n',condCN_tab, '\n' ,LTE_EE_tab, '\n',LTE_IE_tab, '\n',LTE_CN_tab, '\n',GTE_EE_tab, '\n',GTE_IE_tab, '\n',GTE_CN_tab, RTE_EE_tab, '\n',RTE_IE_tab, '\n',RTE_CN_tab, '\n');
+    print_table=  strcat(stability_tab, '\n',condEE_tab,LTE_EE_tab, '\n',LTE_IE_tab, '\n',LTE_CN_tab, '\n',GTE_EE_tab, '\n',GTE_IE_tab, '\n',GTE_CN_tab, RTE_EE_tab, '\n',RTE_IE_tab, '\n',RTE_CN_tab, '\n');
     print_tab=sprintf(print_table);
     
 end

@@ -1,28 +1,128 @@
 
- ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0010 [s] ------------------------------ 
+ ------------------------------Current parameter:  dx = 0.0100 [cm]      dt = 0.0035 [s] ------------------------------ 
  
  ◉ Stability condition (Explicit Euler): dt <= dx^2 / (2a^2) = 0.0004 [s] 
 
          ➤ ⛔ WARNING: Solution is unstable.
 
- ◉ Elapsed Time Explicit Euler : 6.1496 [s], conditioning number: 7852.5321 
+ ◉ Elapsed Time Explicit Euler : 1.4930 [s], conditioning number: 5434.4110 
 
  
- ◉ Elapsed Time Implicit Euler : 125.9784 [s], conditioning number: 5.7600 
+ ◉ Elapsed Time Implicit Euler : 32.5314 [s], conditioning number: 17.6598 
 
  
- ◉ Elapsed Time Crank - Nicolson : 73.1237 [s] , conditioning number: 52035.2923 
+ ◉ Elapsed Time Crank - Nicolson : 22.1836 [s] , conditioning number: 14821.1030 
 
  
- ◉ Elapsed Time PDEPE : 1.0136 [s] 
+ ◉ Elapsed Time PDEPE : 2.3094 [s] 
 
- --------    ✦ Calcutation with dx=0.010, dt=0.001  completed 
+ --------    ✦ Calcutation with dx=0.010, dt=0.004  completed 
 
-Stability Condition - r - Table (Explicit Euler Method):
 
-Spatial Step \ Time Step |  0.0010 |
+ 🔶🔶🔶🔶 Stability Condition - r - Table (Explicit Euler Method):🔶🔶🔶🔶
 
-      0.0100                       | 1.1900 |
+Spatial Step / Time Step |  0.0035 |
 
-                 ⚡ Total Time of Simulations: 207.35 seconds 
+      0.0100                       | 4.1650 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Explicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 5434.4110 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Implicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 17.6598 |
+
+
+
+
+ 🔶🔶🔶🔶 Condition Number (Crank-Nicolson Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 14821.1030 |
+
+
+
+🔶🔶🔶🔶 Local Truncation Error Table (Explicit Euler Method):🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 1.334137e+62 |
+
+
+
+🔶🔶🔶🔶 Local Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 0.8980 |
+
+
+
+ 🔶🔶🔶🔶 Local Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 2.1776 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Explicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 3.320632e+59 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 0.0008 |
+
+
+
+ 🔶🔶🔶🔶 Global Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶 
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 0.0009 |
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Explicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 1.194733e+59 |
+
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Implicit Euler Method): 🔶🔶🔶🔶
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 0.0003 |
+
+
+
+ 🔶🔶🔶🔶 Relative Truncation Error Table (Crank-Nicolson Method): 🔶🔶🔶🔶 
+
+Spatial Step / Time Step |  0.0035 |
+
+      0.0100                       | 0.0003 |
+
+
+                 ⚡ Total Time of Simulations: 387.49 seconds 
 

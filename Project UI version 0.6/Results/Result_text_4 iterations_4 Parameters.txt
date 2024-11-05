@@ -5,16 +5,16 @@
 
          ➤ ✅ Solution is stable.
 
- ◉ Elapsed Time Explicit Euler : 0.0508 [s], conditioning number: 296.0591 
+ ◉ Elapsed Time Explicit Euler : 0.0193 [s], conditioning number: 296.0591 
 
  
- ◉ Elapsed Time Implicit Euler : 0.6953 [s], conditioning number: 2.9039 
+ ◉ Elapsed Time Implicit Euler : 0.6161 [s], conditioning number: 2.9039 
 
  
- ◉ Elapsed Time Crank - Nicolson : 0.7413 [s] , conditioning number: 41.5022 
+ ◉ Elapsed Time Crank - Nicolson : 0.6360 [s] , conditioning number: 41.5022 
 
  
- ◉ Elapsed Time PDEPE : 0.4042 [s] 
+ ◉ Elapsed Time PDEPE : 0.0591 [s] 
 
  --------    ✦ Calcutation with dx=0.050, dt=0.010  completed 
 
@@ -24,16 +24,16 @@
 
          ➤ ✅ Solution is stable.
 
- ◉ Elapsed Time Explicit Euler : 0.0218 [s], conditioning number: 20.8267 
+ ◉ Elapsed Time Explicit Euler : 0.0196 [s], conditioning number: 20.8267 
 
  
- ◉ Elapsed Time Implicit Euler : 1.2571 [s], conditioning number: 1.9520 
+ ◉ Elapsed Time Implicit Euler : 1.2487 [s], conditioning number: 1.9520 
 
  
- ◉ Elapsed Time Crank - Nicolson : 1.3323 [s] , conditioning number: 2.5768 
+ ◉ Elapsed Time Crank - Nicolson : 1.2501 [s] , conditioning number: 2.5768 
 
  
- ◉ Elapsed Time PDEPE : 0.0976 [s] 
+ ◉ Elapsed Time PDEPE : 0.1001 [s] 
 
  --------    ✦ Calcutation with dx=0.050, dt=0.005  completed 
 
@@ -43,16 +43,16 @@
 
          ➤ ⛔ WARNING: Solution is unstable.
 
- ◉ Elapsed Time Explicit Euler : 0.1964 [s], conditioning number: 2690.2092 
+ ◉ Elapsed Time Explicit Euler : 0.1042 [s], conditioning number: 2690.2092 
 
  
- ◉ Elapsed Time Implicit Euler : 2.7205 [s], conditioning number: 12.8996 
+ ◉ Elapsed Time Implicit Euler : 2.6253 [s], conditioning number: 12.8996 
 
  
- ◉ Elapsed Time Crank - Nicolson : 2.2584 [s] , conditioning number: 16443.5514 
+ ◉ Elapsed Time Crank - Nicolson : 2.1361 [s] , conditioning number: 16443.5514 
 
  
- ◉ Elapsed Time PDEPE : 0.1534 [s] 
+ ◉ Elapsed Time PDEPE : 0.1334 [s] 
 
  --------    ✦ Calcutation with dx=0.020, dt=0.010  completed 
 
@@ -62,25 +62,106 @@
 
          ➤ ⛔ WARNING: Solution is unstable.
 
- ◉ Elapsed Time Explicit Euler : 0.2156 [s], conditioning number: 1569.0440 
+ ◉ Elapsed Time Explicit Euler : 0.2196 [s], conditioning number: 1569.0440 
 
  
- ◉ Elapsed Time Implicit Euler : 5.2470 [s], conditioning number: 6.9499 
+ ◉ Elapsed Time Implicit Euler : 5.1927 [s], conditioning number: 6.9499 
 
  
- ◉ Elapsed Time Crank - Nicolson : 4.4174 [s] , conditioning number: 5407.3706 
+ ◉ Elapsed Time Crank - Nicolson : 4.2098 [s] , conditioning number: 5407.3706 
 
  
- ◉ Elapsed Time PDEPE : 0.1720 [s] 
+ ◉ Elapsed Time PDEPE : 0.1626 [s] 
 
  --------    ✦ Calcutation with dx=0.020, dt=0.005  completed 
 
 Stability Condition - r - Table (Explicit Euler Method):
 
-Spatial Step \ Time Step |  0.0100 | 0.0050 |
+Spatial Step / Time Step |  0.0100 | 0.0050 |
 
       0.0500                       | 0.4760 | 0.2380 |
       0.0200                       | 2.9750 | 1.4875 |
 
-                 ⚡ Total Time of Simulations: 21.90 seconds 
+
+
+Local Truncation Error Table (Explicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 1.2783 | 0.3739 |
+      0.0200                       | 108269944925571877991426318970805739364551719056516640301211958871513518565399049901958099707406896643949342419259249212515013054680619032548212587166832865631019081364861875341300149148091938887200702495635820782792313143296.0000 | 8809784.2688 |
+
+
+
+Local Truncation Error Table (Implicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.4467 | 0.2557 |
+      0.0200                       | 0.9241 | 0.8670 |
+
+
+
+Local Truncation Error Table (Crank-Nicolson Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.1210 | 0.0259 |
+      0.0200                       | 1.7603 | 0.8441 |
+
+
+
+Global Truncation Error Table (Explicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0023 | 0.0009 |
+      0.0200                       | Inf | 35606.0394 |
+
+
+
+Global Truncation Error Table (Implicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0014 | 0.0007 |
+      0.0200                       | 0.0016 | 0.0010 |
+
+
+
+Global Truncation Error Table (Crank-Nicolson Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0003 | 0.0002 |
+      0.0200                       | 0.0015 | 0.0005 |
+
+
+Relative Truncation Error Table (Explicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0008 | 0.0003 |
+      0.0200                       | 179503321948114256690988469684317667370093284940373869272641976365555820928229927235447259641291134973797324082529931720252204420151210109992059961079523681453099740948546334267755352441583563365998029454412576627529613312.0000 | 12793.4604 |
+
+
+
+Relative Truncation Error Table (Implicit Euler Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0005 | 0.0003 |
+      0.0200                       | 0.0006 | 0.0003 |
+
+
+
+Relative Truncation Error Table (Crank-Nicolson Method):
+
+Spatial Step / Time Step |  0.0100 | 0.0050 |
+
+      0.0500                       | 0.0001 | 0.0001 |
+      0.0200                       | 0.0006 | 0.0002 |
+
+
+                 ⚡ Total Time of Simulations: 18.97 seconds 
 

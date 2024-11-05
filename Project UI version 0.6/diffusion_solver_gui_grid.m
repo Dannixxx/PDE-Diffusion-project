@@ -1,6 +1,6 @@
 
 function diffusion_solver_gui_grid()
-    % Create main GUI window using uifigure
+    %% Create main GUI window using uifigure
     hFig = uifigure('Name','PDE Diffusion Solver','Position',[40 40 800 700]);  % Adjusted height of the figure
 
 
@@ -64,11 +64,11 @@ function diffusion_solver_gui_grid()
 
     % Error Tolerance for PDEPE Solver (RelTol and AbsTol)
     uilabel(paramGrid,'Text','RelTol:','HorizontalAlignment','left');
-    hRelTol = uieditfield(paramGrid,'numeric','Value',1e-3,'Editable','on','Limits', [0 1]);
+    hRelTol = uieditfield(paramGrid,'numeric','Value',1e-10,'Editable','on','Limits', [0 1]);
     uilabel(paramGrid,'Text',''); % Blank for spacing
 
     uilabel(paramGrid,'Text','AbsTol:','HorizontalAlignment','left');
-    hAbsTol = uieditfield(paramGrid,'numeric','Value',1e-6,'Editable','on','Limits', [0 1]);
+    hAbsTol = uieditfield(paramGrid,'numeric','Value',1e-10,'Editable','on','Limits', [0 1]);
     uilabel(paramGrid,'Text',''); % Blank for spacing
 
     %% Plot Options Section (Right Portion)
@@ -82,8 +82,8 @@ function diffusion_solver_gui_grid()
     chk_plot_pdepe = uicheckbox(plotGrid,'Text','Plot PDEPE Solution');
     chk_cond_time = uicheckbox(plotGrid,'Text','Plot Condition Number (Time step)');
     chk_cond_space = uicheckbox(plotGrid,'Text','Plot Condition Number (Spatial step)');
-    chk_trunc_error_time = uicheckbox(plotGrid,'Text','Plot Truncation Error (Time step)');
-    chk_trunc_error_space = uicheckbox(plotGrid,'Text','Plot Truncation Error (Spatial step)');
+    chk_trunc_error_time = uicheckbox(plotGrid,'Text','Plot Local Truncation Error (Time step)');
+    chk_trunc_error_space = uicheckbox(plotGrid,'Text','Plot Local Truncation Error (Spatial step)');
     chk_rel_error_time = uicheckbox(plotGrid,'Text','Plot Relative Error (Time step)');
     chk_rel_error_space = uicheckbox(plotGrid,'Text','Plot Relative Error (Spatial step)');
     chk_savefig= uicheckbox(plotGrid,'Text','Save the plot as png');
@@ -112,7 +112,7 @@ function diffusion_solver_gui_grid()
     figuresFolder = fullfile(pwd, 'Figures');  % 'pwd' returns the current working directory
 
 
-    %save r values
+    % save r values
     % Define the Results folder path
     resultFolder = fullfile(pwd, 'Results');  % 'pwd' returns the current working directory
     % Check if the Results folder exists, if not, create it
@@ -156,7 +156,7 @@ function diffusion_solver_gui_grid()
  
             file_name_results = fullfile(resultFolder,filename);
 
-            % Open a file in write mode
+            % Open the .txt file in write mode
             fileID = fopen(file_name_results, 'w');
             
             % Write text to the file
